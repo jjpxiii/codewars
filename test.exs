@@ -18,7 +18,7 @@ defmodule Aretheythesame do
     Enum.sort(b) == Enum.sort(Enum.map(a, fn(x) -> x * x end)) 
     a |> Enum.map(fn(x) -> x * x end) |> Enum.sort()
     end
-end
+end 
 
     a = [121, 144, 19, 161, 19, 144, 19, 11]
     b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
