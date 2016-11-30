@@ -9,7 +9,6 @@ end
 
 IO.puts Solution.remove("!Hi !!")
 
-<<<<<<< HEAD
 defmodule Aretheythesame do
 
   	@spec comp([number], [number]) :: boolean
@@ -81,34 +80,9 @@ defmodule RevrotTest do
   end
   
 end
-=======
+
 defmodule Pipeline do
-  def fix_pipe([head | tail]) do
-  if (List.first tail) != nil and (head + 1) != hd tail do
-    head = head ++ [(hd head) + 1]
-    IO.inspect head
-    [ tl(head) | fix_pipe(tail)]
-  else
-    [(head+1)   | fix_pipe(tail)]
-  end
-  end
-
-  def fix_pipe([]) do
-    []
+  def fix_pipe(pipes) do
+    s= "25209716599494641707802888663268147911385353847620835379032707252906"
   end
 end
-
-IO.puts Pipeline.fix_pipe([2, 4, 6])
-
-defmodule Math do
-  def double_each([head | tail]) do
-    [head * 2 | double_each(tail)]
-  end
-
-  def double_each([]) do
-    []
-  end
-end
-
-IO.puts Math.double_each([1, 2, 3])
->>>>>>> 0324a7047d320e2148f10c33042a9137dd080c66
