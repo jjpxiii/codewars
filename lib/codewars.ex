@@ -43,9 +43,7 @@ defmodule SplitTheBill do
     for {k, v} <- group, into: %{}, do: {k, Float.round(v-avg, 2)} 
     end
 end
-
 ExUnit.start()
-
 defmodule SplitTheBillTest do
 
   use ExUnit.Case
@@ -63,6 +61,26 @@ defmodule SplitTheBillTest do
     testing(5, %{:A => 20348, :B => 493045, :C => 2948, :D => 139847, :E => 48937534, :F => 1938724, :G => 4, :H => 2084}, %{:A => -6421468.75, :B => -5948771.75, :C => -6438868.75, :D => -6301969.75, :E => 42495717.25, :F => -4503092.75, :G => -6441812.75, :H => -6439732.75})
   end
 end
+
+defmodule Pilecubes do
+  def find_nb(m) do
+    find_nb(m, 1, 0)
+  end
+  
+  defp find_nb(m, start, temp) do
+      IO.inspect start
+      IO.inspect temp
+      cond do
+        temp > m -> -1
+        temp == m -> start - 1
+        true -> 
+          temp = temp + :math.pow(start,3)
+          find_nb(m, start + 1, temp)
+      end
+  end 
+end
+
+ExUnit.start()
 
 defmodule PilecubesTest do
   
