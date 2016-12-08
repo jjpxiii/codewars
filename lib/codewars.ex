@@ -64,20 +64,46 @@ end
 
 defmodule Pilecubes do
   def find_nb(m) do
+  IO.inspect "!! #{m}"
     find_nb(m, 1, 0)
   end
   
   defp find_nb(m, start, temp) do
-      IO.inspect start
-      IO.inspect temp
       cond do
         temp > m -> -1
-        temp == m -> start - 1
+        temp == m -> 
+            IO.puts start
+            start - 1
         true -> 
-          temp = temp + :math.pow(start,3)
-          find_nb(m, start + 1, temp)
+          start = start + 1
+          temp = temp + (start*start*start)
+          find_nb(m, start, temp)
       end
   end 
+
+    def reverse(m, start, temp) do
+      cond do
+        start == m -> 
+            IO.puts start
+            temp
+        true -> 
+          start = start + 1
+          temp = temp + (start*start*start)
+          find_nb(m, start, temp)
+      end
+  end 
+end
+
+defmodule Pilecubes2 do
+
+  defp do_find_nb(0, n), do: n - 1
+  defp do_find_nb(nb, _) when nb < 0, do: -1
+  defp do_find_nb(nb, n), do: do_find_nb(nb - (n*n*n), n+1)
+
+  def find_nb(m) do
+    do_find_nb(m, 1)
+  end
+  
 end
 
 ExUnit.start()
