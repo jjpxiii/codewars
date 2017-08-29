@@ -1,3 +1,4 @@
+ExUnit.start(exclude: [:skip])
 defmodule Codewars do
 
 end
@@ -53,6 +54,7 @@ defmodule SplitTheBillTest do
     assert SplitTheBill.split_the_bill(group) == ans
   end
   
+  @tag :skip
   test "split_the_bill" do    
     testing(1, %{:A => 20, :B => 15, :C => 10}, %{:A => 5.00, :B => 0.00, :C => -5.00 })
     testing(2, %{:A => 40, :B => 25, :X => 10}, %{:A => 15.00, :B => 0.00, :X => -15.00})
@@ -106,8 +108,6 @@ defmodule Pilecubes2 do
   
 end
 
-ExUnit.start()
-
 defmodule PilecubesTest do
   
   use ExUnit.Case
@@ -117,10 +117,35 @@ defmodule PilecubesTest do
     assert  Pilecubes.find_nb(m) == ans
   end
   
+  @tag :skip
   test "find_nb" do 
     testFindNb  1, 4183059834009, 2022
     testFindNb  2, 24723578342962, -1
     testFindNb  3, 135440716410000, 4824
     testFindNb  4, 40539911473216, 3568
+  end
+end
+
+defmodule Buycar do
+
+  def nb_months(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth) do
+    # your code
+  end
+end
+
+
+defmodule BuycarTest do
+  
+  use ExUnit.Case
+
+  defp testing(_, startPriceOld, startPriceNew, savingperMonth, percentLossByMonth, ans) do 
+    assert Buycar.nb_months(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth) == ans
+  end
+  
+  test "nb_months" do 
+    testing(1, 2000, 8000, 1000, 1.5, {6, 766})
+    testing(2, 12000, 8000, 1000, 1.5, {0, 4000})
+    testing(3, 8000, 12000, 500, 1, {8, 597})
+    testing(4, 18000, 32000, 1500, 1.25, {8, 332})
   end
 end
