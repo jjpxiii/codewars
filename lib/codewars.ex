@@ -149,3 +149,23 @@ defmodule BuycarTest do
     testing(4, 18000, 32000, 1500, 1.25, {8, 332})
   end
 end
+
+defmodule Maxrot do
+  def max_rot(num) do
+    rot(Integer.digits(num), num, 0)
+  end
+  
+  def rot([head | tail], num, max) do
+    temp = [tail ++ [head]] |> Enum.concat |> Integer.undigits
+    IO.inspect temp
+    if temp == num do
+      max
+    else
+      if temp > max do
+      max = temp
+      end
+    rot([tail ++ [head]] |> Enum.concat, num, max)
+    end
+  
+  end
+end
