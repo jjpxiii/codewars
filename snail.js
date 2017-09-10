@@ -1,9 +1,6 @@
 snail = function (arr) {
     if (array.length === 0) return arr
-    var final = compute(arr)
-    var sol = []
-
-    return flatten(final)
+    return flatten(compute(arr))
 }
 
 function flatten(arr) {
