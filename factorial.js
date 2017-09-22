@@ -74,4 +74,29 @@ function factorial(n) {
     return result
 }
 
-console.log(factorial(100))
+function longPow(n) {
+    var result = "1"
+    for (let i = 1; i <= n; i++) {
+        result = longMult(result, 2)
+    }
+    return result
+}
+
+decode = function (w) {
+    var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,? -"
+    var res = ""
+    for (let i = 0; i < w.length; i++) {
+        var newAlpha = [];
+        for (let j = 0; j < alphabet.length; j++) {
+            newAlpha[((j + 1) * longPow(i+1) - 1) % alphabet.length] = j
+        }
+        console.log(alphabet.indexOf(w.charAt(i)))
+        res += alphabet.charAt(newAlpha[alphabet.indexOf(w.charAt(i))])
+    }
+    return res;
+}
+
+console.log(decode("pJrZkmYVxPA5oJGXUW?OR?E3MJglc5,39Cd41rh1HHsGhrERKOPWdq"))
+console.log(decode("bdhpF,82QsLirJejtNmzZKgnB3SwTyXG ?.6YIcflxVC5WE94UA1OoD70MkvRuPqHabdh"))
+
+console.log(decode("ZKgnB"))
