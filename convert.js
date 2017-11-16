@@ -34,8 +34,11 @@ function convert(input, source, target) {
             return input.toString(8)
         case Alphabet.HEXA_DECIMAL:
             return input.toString(16)
-        default:
+        case Alphabet.DECIMAL:
             return input.toString(10)
+        case Alphabet.ALPHA_UPPER:
+            input = input.toUpperCase()
+            break;
     }
 }
 
