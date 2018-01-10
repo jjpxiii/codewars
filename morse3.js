@@ -10,7 +10,7 @@ var decodeBitsAdvanced = function (bits) {
     var rate = Math.floor(ratefloat).toString() + "," + (Math.ceil(ratefloat)).toString();
     var rate2 = Math.ceil(ratefloat + 1).toString() + ",";
     var rate3 = (Math.ceil(rateMin)).toString() + ",";
-    console.log(rateMin);
+    console.log(rateMin); 
 
     var k = 1
 
