@@ -13,7 +13,7 @@ var decodeBitsAdvanced = function (bits) {
     var rate3 = (Math.ceil(rateMin)).toString() + ",";
     console.log(rateMin);
 
-    var k = 1
+    var k = 1 
 
     bits = bits.replace(longSpaces, '   ');
 
