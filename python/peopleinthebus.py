@@ -9,12 +9,12 @@
 
 def number(bus_stops):
     return sum([stop[0] - stop[1] for stop in bus_stops])
+# print(number([[10, 0], [3, 5], [5, 8]]))
 
-
-print(number([[10, 0], [3, 5], [5, 8]]))
 
 def is_square(n):
-    return n > 0 and n**(1/2) % 1 == 0    
+    return n > 0 and n**(1/2) % 1 == 0
+
 
 def number_to_string(n):
     return str(n)
@@ -27,5 +27,18 @@ def number_to_string(n):
 #     except ValueError:
 #         return False
 
+
 def validate_pin(pin):
     return len(pin) in (4, 6) and pin.isdigit()
+
+
+import collections
+
+
+def isValidWalk(walk):
+    if walk is None:
+        return False
+    counter = collections.Counter(walk)
+    return len(counter) and counter['n'] == counter['s'] and counter['w'] == counter['e']
+
+# print(isValidWalk(['s', 'w', 'n', 'n', 's', 'n', 's', 'e'])) 
