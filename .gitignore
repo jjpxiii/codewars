@@ -21,3 +21,8 @@ package-lock.json
 dotnet/ConsoleApp1/bin
 dotnet/ConsoleApp1/obj
 dotnet/ConsoleApp1/.vs
+/.vs
+/dotnet/Katas/bin/Debug/net5.0
+/dotnet/Katas/obj
+/dotnet/.vs/Katas
+/dotnet/.vs/Katas/v16/.suo

@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConwayLife
+namespace Katas
 {
     public class ConwayLife
     {

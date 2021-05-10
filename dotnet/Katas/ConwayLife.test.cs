@@ -1,10 +1,11 @@
-﻿namespace ConwayLife
+﻿using NUnit.Framework;
+using System;
+
+namespace Katas
 {
-    using NUnit.Framework;
-    using System;
 
     [TestFixture]
-    public class SolutionTest
+    public class ConwayLifeTest
     {
         [Test]
         public void TestGlider()
