@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>Katas</AssemblyName>
     <RootNamespace>Katas</RootNamespace>
+    <StartupObject>Katas.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
