@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Katas
 {
 
-    public class Tribonacci
+    public static class Tribonacci
     {
-        public double[] Compute(double[] s, int n)
+        public static double[] Compute(double[] s, int n)
         {
             double[] res = new double[n];
             Array.Copy(s, res, Math.Min(3, n));
