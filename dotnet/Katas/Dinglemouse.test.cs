@@ -41,23 +41,6 @@ namespace Katas
         }
 
         [Test]
-        public void TestCapa()
-        {
-            int[][] queues =
-            {
-                new int[0], // G
-                new int[0], // 1
-                new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1}, // 2
-                new int[0], // 3
-                new int[0], // 4
-                new int[0], // 5
-                new int[0], // 6
-            };
-            var result = Dinglemouse.TheLift(queues, 5);
-            Assert.AreEqual(new[] { 0, 2, 1, 0 }, result);
-        }
-
-        [Test]
         public void TestDown()
         {
             int[][] queues =
@@ -105,7 +88,7 @@ namespace Katas
                 new int[0], // 6
             };
             var result = Dinglemouse.TheLift(queues, 5);
-            Assert.AreEqual(new[] { 0, 1, 5, 6, 5, 1, 0, 1, 0 }, result) ;
+            Assert.AreEqual(new[] { 0, 1, 5, 6, 5, 1, 0, 1, 0 }, result);
         }
 
         [Test]

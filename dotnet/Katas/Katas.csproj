@@ -5,7 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>Katas</AssemblyName>
     <RootNamespace>Katas</RootNamespace>
-    <StartupObject>Katas.Program</StartupObject>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
