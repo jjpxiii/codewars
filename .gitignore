@@ -27,3 +27,4 @@ dotnet/ConsoleApp1/.vs
 /dotnet/.vs/Katas
 /dotnet/.vs/Katas/v16/.suo
 /dotnet/Katas/bin/Debug/net6.0
+node_modules
