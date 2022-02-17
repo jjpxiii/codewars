@@ -1,6 +1,6 @@
 ﻿public class Day1
 {
-    private static string input = @"141
+    private static readonly string input = @"141
 140
 160
 161
@@ -2000,10 +2000,10 @@
 9089
 9102
 9105";
+
     public static int Part1()
     {
-        var inputSplitted = input.Split("\r\n").Select(o => Convert.ToInt32(o)).ToList();
-        return Execute(inputSplitted);
+        return Execute(input.Split("\r\n").Select(o => Convert.ToInt32(o)).ToList());
     }
 
     public static int Part2()
@@ -2027,6 +2027,7 @@
                 count++;
             }
         }
+
         return count;
     }
 }

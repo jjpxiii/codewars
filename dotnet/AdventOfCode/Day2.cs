@@ -1,6 +1,6 @@
 ﻿public class Day2
 {
-    private static string input = @"forward 2
+    private static readonly string Input = @"forward 2
 down 2
 forward 6
 forward 8
@@ -1003,13 +1003,13 @@ forward 5";
 
     public static int Part1()
     {
-        var inputSplitted = input.Split("\r\n").ToList();
+        var inputSplitted = Input.Split("\r\n").ToList();
         var x = 0;
         var y = 0;
-        for (int i = 0; i < inputSplitted.Count; i++)
+        foreach (string s in inputSplitted)
         {
-            var instruction = inputSplitted[i].Split(' ')[0];
-            var position = Convert.ToInt32(inputSplitted[i].Split(' ')[1]);
+            var instruction = s.Split(' ')[0];
+            var position = Convert.ToInt32(s.Split(' ')[1]);
             switch (instruction)
             {
                 case "forward":
@@ -1025,19 +1025,20 @@ forward 5";
                     break;
             }
         }
+
         return x * y;
     }
 
     public static int Part2()
     {
-        var inputSplitted = input.Split("\r\n").ToList();
-        var x = 0;
-        var depth = 0;
-        var aim = 0;
-        for (int i = 0; i < inputSplitted.Count; i++)
+        var inputSplitted = Input.Split("\r\n").ToList();
+        int x, depth, aim;
+        x = depth = aim = 0;
+
+        foreach (string s in inputSplitted)
         {
-            var instruction = inputSplitted[i].Split(' ')[0];
-            var position = Convert.ToInt32(inputSplitted[i].Split(' ')[1]);
+            var instruction = s.Split(' ')[0];
+            var position = Convert.ToInt32(s.Split(' ')[1]);
             switch (instruction)
             {
                 case "forward":
@@ -1054,6 +1055,7 @@ forward 5";
                     break;
             }
         }
+
         return x * depth;
     }
 }
