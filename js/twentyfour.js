@@ -1,8 +1,11 @@
-function equalTo24(args) {
+const { format } = require("prettier");
+
+function equalTo24old(args) {
   var numbers = Array.from(arguments);
   for (let i = 0; i < 4; i++) {
     let element1 = numbers[i];
     let leftoverArray = [...numbers.slice(0, i), ...numbers.slice(i + 1, 4)];
+
     for (let j = 0; j < 3; j++) {
       let element2 = leftoverArray[j];
       let firstResult = calculateEverything(element1, element2);
@@ -30,19 +33,19 @@ function equalTo24(args) {
             lastResult[m] = calculateEverything(secondResult[l][m], element4);
             if (lastResult[m].indexOf(24) > -1) {
               let op = ["+", "-", "*", "/"];
-              console.log("first");
-              console.log(firstResult);
-              console.log("seconde");
-              console.log(secondResult[l]);
-              console.log("LAST");
-              console.log(lastResult[m]);
-              console.log(l);
-              console.log(m);
-              console.log(lastResult[m].indexOf(24));
+              // console.log("first");
+              // console.log(firstResult);
+              // console.log("seconde");
+              // console.log(secondResult[l]);
+              // console.log("LAST");
+              // console.log(lastResult[m]);
+              // console.log(l);
+              // console.log(m);
+              // console.log(lastResult[m].indexOf(24));
               return addParentheses(
                 false,
-                m < 3 ? element1 : element2,
-                m < 3 ? element2 : element1,
+                element1,
+                element2,
                 element3,
                 element4,
                 op[l],
@@ -96,17 +99,17 @@ function equalTo24(args) {
               console.log(intermediary);
               console.log("LAST");
               console.log(lastResult);
+              console.log(l);
               console.log(m);
               console.log(lastResult.indexOf(24));
-              console.log(l);
               let op = ["+", "-", "*", "/", "-", "/"];
               let n = lastResult.indexOf(24);
 
               return addParentheses(
                 n === 4 || n === 5 ? true : false,
-                element4,
-                element2,
                 element1,
+                element2,
+                element4,
                 element3,
                 op[m],
                 op[n],
@@ -114,9 +117,9 @@ function equalTo24(args) {
               );
             }
             let anotherResult = calculateEverything(intermediary2[m], element4);
-            if (firstResult[l] == 1) {
-              console.log("jojo" + intermediary2 + " zerzer " + element4);
-            }
+            // if (firstResult[l] == 1) {
+            //   console.log("jojo" + intermediary2 + " zerzer " + element4);
+            // }
             if (anotherResult.indexOf(24) > -1) {
               console.log("ZRGTERGGERGRGERGERGGE");
               // console.log("ICI !");
@@ -127,9 +130,9 @@ function equalTo24(args) {
               console.log(intermediary2);
               console.log("LAST");
               console.log(anotherResult);
+              console.log(l);
               console.log(m);
               console.log(anotherResult.indexOf(24));
-              console.log(l);
               let op = ["+", "-", "*", "/"];
               let n = anotherResult.indexOf(24);
 
@@ -159,10 +162,10 @@ function equalTo24(args) {
               console.log(intermediary3);
               console.log("LAST");
               console.log(anotherResult2);
+              console.log(l);
               console.log(m);
               console.log(anotherResult2.indexOf(24));
-              console.log(l);
-              let op = ["+", "-", "*", "/", "+", "/"];
+              let op = ["+", "-", "*", "/", "-", "/"];
               let n = anotherResult2.indexOf(24);
 
               return addParentheses(
@@ -172,7 +175,7 @@ function equalTo24(args) {
                 element2,
                 element1,
                 op[n],
-                op[m],
+                firstResult[l] < 0 && m > 3 ? op[m - 4] : op[m],
                 op[l]
               );
               return;
@@ -222,11 +225,105 @@ function calculateEverything(a, b) {
   return [a + b, a - b, a * b, a / b];
 }
 
-// console.log(equalTo24(1, 2, 3, 4));
+function remainder(already, left) {
+  return [
+    already + left,
+    already - left,
+    already * left,
+    already / left,
+    left - already,
+    left / already,
+  ];
+}
+
+function equalTo24(args) {
+  var numbers = Array.from(arguments);
+  for (let i = 0; i < 1; i++) {
+    let element1 = numbers[i];
+    // console.log("First element " + element1);
+    let leftoverArray = [...numbers.slice(0, i), ...numbers.slice(i + 1, 4)];
+    let toGo = remainder(element1, 24);
+    // console.log(toGo);
+    for (let j = 0; j < 1; j++) {
+      let element2 = leftoverArray[j];
+      for (let a = 0; a < 6; a++) {
+        // console.log("UN " + toGo[a]);
+        // console.log("Second element " + element2);
+        let toGoTwo = remainder(element2, toGo[a]);
+        // console.log(toGoTwo);
+        let leftoverArray2 = [
+          ...leftoverArray.slice(0, j),
+          ...leftoverArray.slice(j + 1, 3),
+        ];
+        for (let k = 0; k < 1; k++) {
+          let element3 = leftoverArray2[k];
+          let element4 = leftoverArray2[k + 1];
+          for (let b = 0; b < 6; b++) {
+            // console.log("DEUX " + toGoTwo[b]);
+            // console.log("Third element " + element3);
+            let toGoThree = remainder(element3, toGoTwo[b]);
+            // console.log(toGoThree);
+            let c = toGoThree.indexOf(element4);
+            if (c > -1) {
+              console.log(toGo);
+              console.log(toGoTwo);
+              console.log(toGoThree);
+              // console.log(final);
+              console.log("FUCK YEAH");
+              console.log(element1);
+              console.log(element2);
+              console.log(element3);
+              console.log(element4);
+              console.log("UN " + toGo[a]);
+              console.log("DEUX " + toGoTwo[b]);
+              console.log("TROIS " + toGoThree[c]);
+              console.log("OPS");
+              console.log(a);
+              console.log(b);
+              console.log(c);
+              return formatResult(
+                element1,
+                element2,
+                element3,
+                element4,
+                a,
+                b,
+                c
+              );
+              // }
+            }
+          }
+        }
+      }
+      // let firstResult = calculateEverything(element1, element2);
+      // let leftoverArray2 = [
+      //   ...leftoverArray.slice(0, j),
+      //   ...leftoverArray.slice(j + 1, 3),
+      // ];
+
+      // for (let k = 0; k < 2; k++) {
+      //   let element3 = leftoverArray2[k];
+      //   let element4 = [
+      //     ...leftoverArray2.slice(0, k),
+      //     ...leftoverArray2.slice(k + 1, 2),
+      //   ][0];
+      // }
+    }
+  }
+}
+
+function formatResult(e1, e2, e3, e4) {
+  let op = ["+", "-", "*", "/", "-", "/"];
+  let n = arguments[4];
+  let n2 = arguments[5];
+  let n3 = arguments[6];
+  return `${e1}${op[n]}${e2}${op[n2]}${e3}${op[n3]}${e4}`;
+}
+console.log(equalTo24(1, 2, 3, 4));
 // console.log(equalTo24(2, 3, 4, 5));
 // console.log(equalTo24(3, 4, 5, 6));
 // console.log(equalTo24(1, 1, 1, 13));
-console.log(equalTo24(2, 7, 7, 13));
+// console.log(equalTo24(2, 7, 7, 13));
 // console.log(equalTo24(13, 13, 6, 12));
 // console.log(equalTo24(13, 13, 13, 13));
 module.exports = equalTo24;
