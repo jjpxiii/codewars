@@ -1,4 +1,3 @@
-const { it } = require("@jest/globals");
 const equalTo24 = require("./twentyfour");
 
 describe("Basic tests", () => {
