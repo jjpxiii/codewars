@@ -90,10 +90,10 @@ function equalTo24(args) {
               console.log(b);
               console.log(c);
               return formatResult(
-                res1,
-                res2,
-                res3,
                 res4,
+                res3,
+                res2,
+                res1,
                 toGo[a] < 0 ? -a : a,
                 toGoTwo[b] < 0 ? -b : b,
                 toGoThree[c] < 0 ? -c : c
@@ -137,9 +137,9 @@ function equalTo24(args) {
             console.log(binomialResult.indexOf(24));
             let op = ["+", "-", "*", "/", "-", "/"];
             return addParentheses(
-              true,
-              a > 3 ? numbers[j] : numbers[i],
-              a > 3 ? numbers[i] : numbers[j],
+              false,
+              a > 3 ? leftoverArray[j] : numbers[i],
+              a > 3 ? numbers[i] : leftoverArray[j],
               b > 3 ? leftoverArray2[1] : leftoverArray2[0],
               b > 3 ? leftoverArray2[0] : leftoverArray2[1],
               op[a],
@@ -205,15 +205,15 @@ function formatResult(e1, e2, e3, e4, n, n2, n3) {
       n < 0 ? opNeg[-n] : op[n]
     );
 
-  return `${e4}${n3 < 0 ? opNeg[-n3] : op[n3]}${e3}${
+  return `${e1}${n3 < 0 ? opNeg[-n3] : op[n3]}${e2}${
     n2 < 0 ? opNeg[-n2] : op[n2]
-  }${e2}${n < 0 ? opNeg[-n] : op[n]}${e1}`;
+  }${e3}${n < 0 ? opNeg[-n] : op[n]}${e4}`;
 }
-console.log(equalTo24(1, 2, 3, 4));
+// console.log(equalTo24(1, 2, 3, 4));
 // console.log(equalTo24(2, 3, 4, 5));
 // console.log(equalTo24(3, 4, 5, 6));
 // console.log(equalTo24(1, 1, 1, 13));
-// console.log(equalTo24(2, 7, 7, 13));
+console.log(equalTo24(2, 7, 7, 13));
 // console.log(equalTo24(13, 13, 6, 12));
 // console.log(equalTo24(13, 13, 13, 13));
 module.exports = equalTo24;
