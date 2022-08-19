@@ -30,3 +30,6 @@ dotnet/ConsoleApp1/.vs
 /dotnet/AdventOfCode/bin/Debug/net6.0
 /dotnet/AdventOfCode/obj
 node_modules
+
+rust/*.exe
+rust/*.txt

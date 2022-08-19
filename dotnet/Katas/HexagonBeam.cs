@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Katas
 {
-    internal class HexagonBeam
+    public class HexagonBeam
     {
     }
 }

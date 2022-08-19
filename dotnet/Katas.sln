@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Katas", "Katas\Katas.csproj", "{5B086F38-5271-480A-847E-8A4BDDECF7B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode", "AdventOfCode\AdventOfCode.csproj", "{C1AC12AD-BFB6-43C7-A7F0-6D655E6B6826}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode", "AdventOfCode\AdventOfCode.csproj", "{C1AC12AD-BFB6-43C7-A7F0-6D655E6B6826}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meritis", "Meritis\Meritis.csproj", "{85874035-F1D8-4647-86DA-04CB38DD1B41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C1AC12AD-BFB6-43C7-A7F0-6D655E6B6826}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1AC12AD-BFB6-43C7-A7F0-6D655E6B6826}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1AC12AD-BFB6-43C7-A7F0-6D655E6B6826}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85874035-F1D8-4647-86DA-04CB38DD1B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85874035-F1D8-4647-86DA-04CB38DD1B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85874035-F1D8-4647-86DA-04CB38DD1B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85874035-F1D8-4647-86DA-04CB38DD1B41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
