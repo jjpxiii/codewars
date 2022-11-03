@@ -33,3 +33,7 @@ node_modules
 
 rust/*.exe
 rust/*.txt
+
+# Added by cargo
+
+/rust/src/target

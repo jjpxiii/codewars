@@ -1,17 +1,5 @@
-mod aoc4;
-
-use std::io;
+mod race_podium;
 
 fn main() {
-    println!("Guess the number!");
-
-    println!("Please input your guess.");
-
-    let mut guess = String::new();
-
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
-
-    println!("You guessed: {}", guess);
+    race_podium::race_podium(11);
 }
